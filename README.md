@@ -3,9 +3,15 @@ redindex
 
 An indexed object store on Node.js and Redis.
 
-## Example ##
+## Installing ##
 
-We need to store `message` objects in Redis, where each message has properties `to`, `id` and `time`. Later, we need to retrieve a bunch of messages, given a recipient (`to` property) and a time duration.
+```shell
+npm install redindex
+```
+
+## Usage ##
+
+In the examples below, we need to store `message` objects in Redis, where each message has properties `to`, `id` and `time`. Later, we need to retrieve a bunch of messages, given a recipient (`to` property) and a `time` range.
 
 ### Creating an index ###
 
