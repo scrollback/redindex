@@ -25,7 +25,7 @@ var messages = redindex('messages', {
 
 This is similar to CouchDB Views. Each index is defined by a function. When a message object is added to Redis, the index function is called with the inserted object. The function may calculate and emit index values.
 
-Two kinds of index values can be emitted: strings (for performing equality comparisons) and numbers (for range comparisons and sorting). Each call to `emit()` may pass one or both these values - to emit a number without emitting a string, pass `null` as the string value.
+Two kinds of index values can be emitted: strings (for performing equality comparisons) and numbers (for range comparisons and sorting). Each call to `emit()` may pass one or both these values - the string as the first parameter and the number as the second. To emit a number without emitting a string, pass `null` as the string value.
 
 Note: index functions must emit the same set of values when called with identical objects.
 
@@ -66,4 +66,4 @@ messages.del('msg03');
 
 ## Roadmap ##
 
- - Easier querying functions: messages.totime('room1', {gt: 12})
+ - Easier querying functions: `messages.totime('room1', {gt: 12})`
